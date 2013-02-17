@@ -8,7 +8,7 @@ class BookmarkAdmin(admin.ModelAdmin):
     list_editable = ('status', )
     
     def link_url(self, obj):
-        return '<a href="%s">%s</a>' % (obj.link, obj.link)
+        return '<a href="%s" target="_blank">%s</a>' % (obj.link, obj.link)
     link_url.allow_tags = True
     
     def tags_list(self, obj):

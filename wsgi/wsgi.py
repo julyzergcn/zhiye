@@ -14,8 +14,17 @@ framework.
 
 """
 import os
+from os.path import dirname, abspath, join
+import sys
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "zhiye.settings")
+
+ROOT = dirname(dirname(abspath(__file__)))
+sys.path.insert(0, ROOT)
+
+APP_ROOT = join(ROOT, 'apps')
+sys.path.insert(0, APP_ROOT)
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION

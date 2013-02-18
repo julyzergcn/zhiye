@@ -1,5 +1,10 @@
 
 <p>
+<a href="/">Bookmarks</a>
+{% if user.is_staff %}<a href="/admin/bookmark/bookmark/add/" target="_blank">Add</a>{% endif %}
+</p>
+
+<p>
 {% for t in tags %}
     <a href="{% url tag_bookmarks t.slug %}">{{ t.title }}</a>
 {% endfor %}

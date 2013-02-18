@@ -14,6 +14,10 @@ class Bookmark(TimeStampedModel, ActivatorModel):
     
     def __unicode__(self):
         return self.title + ' ' + self.link
+    
+    @classmethod
+    def deactivate(cls, pk):
+        cls.objects.filter(pk=pk).update(status=cls.INACTIVE_STATUS)
 
 class Tag(TitleSlugDescriptionModel):
     

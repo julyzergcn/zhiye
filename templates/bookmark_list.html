@@ -1,0 +1,15 @@
+
+<p>
+{% for t in tags %}
+    <a href="{% url tag_bookmarks t.slug %}">{{ t.title }}</a>
+{% endfor %}
+</p>
+
+<ul>
+{% for bm in bookmarks %}
+    <li>
+        <a href="{{ bm.link }}" target="_blank">{{ bm.title }}</a>
+        <a href="{% url deactivate_bookmark bm.id %}">X</a>
+    </li>
+{% endfor %}
+</ul>

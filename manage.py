@@ -2,8 +2,6 @@
 import os
 import sys
 
-sys.path.insert(0, 'apps')
-
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
